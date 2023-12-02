@@ -6,7 +6,7 @@
 
         <table style="width: 100%;">
             <tr>
-                <td style="width: 128px">&nbsp;Izaberite klijenta</asp:Label></td>
+                <td style="width: 128px">&nbsp;Izaberite klijenta</td>
                 <td>&nbsp;<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:NoktaonicaConnectionString %>" SelectCommand="SELECT ime+' '+prezime
                     FROM Klijent"></asp:SqlDataSource>
@@ -14,7 +14,7 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 128px">&nbsp;Izaberite salon</asp:Label></td>
+                <td style="width: 128px">&nbsp;Izaberite salon</td>
                 <td>&nbsp;<asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="nazivSalona" DataValueField="nazivSalona"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:NoktaonicaConnectionString %>" SelectCommand="SELECT [nazivSalona] FROM [Salon]"></asp:SqlDataSource></td>
                 <td>&nbsp;</td>

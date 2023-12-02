@@ -23,6 +23,7 @@ namespace SalonZaNokte
                 int idKlijenta = Convert.ToInt32(new SqlCommand("SELECT klijentID FROM Klijent WHERE ime='" + DropDownList1.SelectedValue.Split(' ')[0] + "'", conn).ExecuteScalar());
                 int idSalona = Convert.ToInt32(new SqlCommand("SELECT salonID FROM Salon WHERE nazivSalona='" + DropDownList2.SelectedValue + "'", conn).ExecuteScalar());
                 string insertQuery = "INSERT INTO ZakazanTermin VALUES ("+idSalona+","+idKlijenta+","+txtCena.Text+",'"+txtDatum.Text+"','"+txtVreme.Text+"','"+txtTehnika.Text+"')";
+                lblPrikaz.Text = insertQuery;
                 SqlCommand cmd = new SqlCommand(insertQuery, conn);
                 if (cmd.ExecuteNonQuery() > 0)
                 {

@@ -7,7 +7,7 @@
         <table style="width: 100%;">
             <tr>
                 <td style="width: 128px">&nbsp;Izaberite klijenta</td>
-                <td>&nbsp;<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
+                <td style="width: 205px">&nbsp;<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:NoktaonicaConnectionString %>" SelectCommand="SELECT ime+' '+prezime
                     FROM Klijent"></asp:SqlDataSource>
                 </td>
@@ -15,33 +15,37 @@
             </tr>
             <tr>
                 <td style="width: 128px">&nbsp;Izaberite salon</td>
-                <td>&nbsp;<asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="nazivSalona" DataValueField="nazivSalona"></asp:DropDownList>
+                <td style="width: 205px">&nbsp;<asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="nazivSalona" DataValueField="nazivSalona"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:NoktaonicaConnectionString %>" SelectCommand="SELECT [nazivSalona] FROM [Salon]"></asp:SqlDataSource></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td style="width: 128px">&nbsp;<asp:Label ID="Label1" runat="server" Text="Tehnika"></asp:Label></td>
-                <td>&nbsp;<asp:TextBox ID="txtTehnika" runat="server"></asp:TextBox></td>
-                <td>&nbsp;</td>
+                <td style="width: 205px">&nbsp;<asp:TextBox ID="txtTehnika" runat="server"></asp:TextBox></td>
+                <td>&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ovo polje je obavezno!" ControlToValidate="txtTehnika" Display="Dynamic" ForeColor="Red">Ovo polje je obavezno!</asp:RequiredFieldValidator></td>
             </tr>
             <tr>
                 <td style="width: 128px">&nbsp;<asp:Label ID="Label2" runat="server" Text="Cena"></asp:Label></td>
-                <td>&nbsp;<asp:TextBox ID="txtCena" runat="server"></asp:TextBox></td>
-                <td>&nbsp;</td>
+                <td style="width: 205px">&nbsp;<asp:TextBox ID="txtCena" runat="server"></asp:TextBox></td>
+                <td>&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ovo polje je obavezno!" ControlToValidate="txtCena" Display="Dynamic" ForeColor="Red">Ovo polje je obavezno!</asp:RequiredFieldValidator></td>
             </tr>
             <tr>
                 <td style="width: 128px">&nbsp;<asp:Label ID="Label3" runat="server" Text="Datum"></asp:Label></td>
-                <td>&nbsp;<asp:TextBox ID="txtDatum" runat="server"></asp:TextBox></td>
-                <td>&nbsp;</td>
+                <td style="width: 205px">&nbsp;<asp:TextBox ID="txtDatum" runat="server"></asp:TextBox></td>
+                <td>&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Ovo polje je obavezno!" ControlToValidate="txtDatum" Display="Dynamic" ForeColor="Red">Ovo polje je obavezno!</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtDatum" Display="Dynamic" ErrorMessage="Uneti datum u obliku:DD-MM-YYYY" ForeColor="Red" ValidationExpression="\d\d-\d\d-\d\d\d\d">Uneti datum u obliku:DD-MM-YYYY</asp:RegularExpressionValidator>
+                </td>
             </tr>
             <tr>
                 <td style="width: 128px">&nbsp;<asp:Label ID="Label4" runat="server" Text="Vreme"></asp:Label></td>
-                <td>&nbsp;<asp:TextBox ID="txtVreme" runat="server"></asp:TextBox></td>
-                <td>&nbsp;</td>
+                <td style="width: 205px">&nbsp;<asp:TextBox ID="txtVreme" runat="server"></asp:TextBox></td>
+                <td>&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ovo polje je obavezno!" ControlToValidate="txtVreme" Display="Dynamic" ForeColor="Red">Ovo polje je obavezno!</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtVreme" Display="Dynamic" ErrorMessage="Uneti vreme u obliku: HH:MM" ForeColor="Red" ValidationExpression="\d\d:\d\d">Uneti vreme u obliku: HH:MM</asp:RegularExpressionValidator>
+                </td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td>&nbsp;<asp:Button ID="btnUnesi" runat="server" Text="Unesi" OnClick="btnUnesi_Click" /></td>
+                <td style="width: 205px">&nbsp;<asp:Button ID="btnUnesi" runat="server" Text="Unesi" OnClick="btnUnesi_Click" /></td>
             </tr>
         </table>
          <br /><br />

@@ -11,7 +11,8 @@ namespace SalonZaNokte
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label1.Text = DropDownList1.SelectedValue.Split(' ')[0];
         }
+
     }
 }

@@ -17,19 +17,29 @@ namespace SalonZaNokte
 
         protected void btnUnesi_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(SqlDataSource1.ConnectionString))
+            if (Page.IsValid)
             {
-                conn.Open();
-                int idKlijenta = Convert.ToInt32(new SqlCommand("SELECT klijentID FROM Klijent WHERE ime='" + DropDownList1.SelectedValue.Split(' ')[0] + "'", conn).ExecuteScalar());
-                int idSalona = Convert.ToInt32(new SqlCommand("SELECT salonID FROM Salon WHERE nazivSalona='" + DropDownList2.SelectedValue + "'", conn).ExecuteScalar());
-                string insertQuery = "INSERT INTO ZakazanTermin VALUES ("+idSalona+","+idKlijenta+","+txtCena.Text+",'"+txtDatum.Text+"','"+txtVreme.Text+"','"+txtTehnika.Text+"')";
-                lblPrikaz.Text = insertQuery;
-                SqlCommand cmd = new SqlCommand(insertQuery, conn);
-                if (cmd.ExecuteNonQuery() > 0)
+                try
                 {
-                    lblPrikaz.Text = "Uspesno dodato u bazu";
+                    using (SqlConnection conn = new SqlConnection(SqlDataSource1.ConnectionString))
+                    {
+                        conn.Open();
+                        int idKlijenta = Convert.ToInt32(new SqlCommand("SELECT klijentID FROM Klijent WHERE ime='" + DropDownList1.SelectedValue.Split(' ')[0] + "'", conn).ExecuteScalar());
+                        int idSalona = Convert.ToInt32(new SqlCommand("SELECT salonID FROM Salon WHERE nazivSalona='" + DropDownList2.SelectedValue + "'", conn).ExecuteScalar());
+                        string insertQuery = "INSERT INTO ZakazanTermin VALUES (" + idSalona + "," + idKlijenta + "," + txtCena.Text + ",'" + txtDatum.Text + "','" + txtVreme.Text + "','" + txtTehnika.Text + "')";
+                        lblPrikaz.Text = insertQuery;
+                        SqlCommand cmd = new SqlCommand(insertQuery, conn);
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            lblPrikaz.Text = "Uspesno dodato u bazu";
+                        }
+
+                    }
                 }
-                
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
     }

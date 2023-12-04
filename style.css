@@ -1,0 +1,8 @@
+﻿body {
+    background-image: url('../Images/pozadina.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.jumbotron{
+    opacity:95%;
+}

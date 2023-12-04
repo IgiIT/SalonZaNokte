@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="SalonZaNokte.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <div class="jumbotron">
         <h3>Prikazivanje podataka o klijentu</h3><br /><br />
         

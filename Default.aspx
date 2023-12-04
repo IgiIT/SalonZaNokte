@@ -4,7 +4,7 @@
      <div class="jumbotron">
        <h3>Unos</h3>
 
-        <table style="width: 100%;">
+        <table style="width: 100%;" class="table table-bordered">
             <tr>
                 <td style="width: 128px">&nbsp;Izaberite klijenta</td>
                 <td style="width: 205px">&nbsp;<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>

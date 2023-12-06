@@ -33,6 +33,15 @@ namespace SalonZaNokte
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
 
         /// <summary>
+        /// ImageNokti control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImageNokti;
+
+        /// <summary>
         /// DropDownList2 control.
         /// </summary>
         /// <remarks>
